@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../src/index.js"></script>
+    <script src="../src/index.js" defer></script>
     <link rel="stylesheet" href="../src/style.css">
     <title>To do List</title>
 </head>
@@ -14,35 +14,41 @@
     </header>
     <div class="main">
         <div class="sidebar">
-            <div class="home">
-                <div class="header">
-                    <img src="../src/icons8-home-page-96.png" alt="H" class="logo">
-                    <div class="home title">Home</div>
+            <div class="menu">
+                <div class="home">
+                    <div class="header">
+                        <img src="../src/icons8-home-page-96.png" alt="H" class="logo">
+                        <div class="home title">Home</div>
+                    </div>
                 </div>
-            </div>
-            <div class="timeline">
-                <div class="header">
-                    <img src="../src/icons8-timeline-week-96.png" alt="T" class="logo">
-                    <div class="timeline title">Timeline</div>
+                <div class="timeline">
+                    <div class="header">
+                        <img src="../src/icons8-timeline-week-96.png" alt="T" class="logo">
+                        <div class="timeline title">Timeline</div>
+                    </div>
                 </div>
-            </div>
-            <div class="projects">
-                <div class="header">
-                    <img src="../src/icons8-checklist-96.png" alt="P" class="logo">
-                    <div class="projects title">Projects</div>
+                <div class="projects">
+                    <div class="header">
+                        <img src="../src/icons8-checklist-96.png" alt="P" class="logo">
+                        <div class="projects title">Projects</div>
+                    </div>
+                    <div class="projects-container">
+                        <div class="project one">
+                            <div class="title">Groceries</div>
+                            <div class="title">Moving prep</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="projects-container">
-                    <div class="project one">
-                        <div class="title">Groceries</div>
-                        <div class="title">Moving prep</div>
+                <div class="notes">
+                    <div class="header">
+                        <img src="../src/icons8-create-96.png" alt="N" class="logo">
+                        <div class="notes title">Notes</div>
                     </div>
                 </div>
             </div>
-            <div class="notes">
-                <div class="header">
-                    <img src="../src/icons8-create-96.png" alt="N" class="logo">
-                    <div class="notes title">Notes</div>
-                </div>
+            <div class="new header">
+                <img src="../src/icons8-plus-math-96.png" alt="+" class="logo">
+                <div class="new title">New</div>
             </div>
         </div>
         <div class="container"> <!-- in home-->
@@ -61,6 +67,40 @@
                 <div class="descr">3 fresh eggs</div>
                 <div class="dueDate">26/11/2022</div>
             </div>
+        </div>
+        <div class="form-container">
+            <button class="close-form">exit</button>
+            <form>
+                <legend>What would you like to create ?</legend>
+                <fieldset class="new-project">
+                    <legend>New project</legend>
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" placeholder="Groceries">
+                    <label for="descr">Description</label>
+                    <textarea name="descr" id="descr" cols="30" rows="10" placeholder="from the market"></textarea>
+                </fieldset>
+                <fieldset class="new-task">
+                    <legend>New task</legend>
+                    <label for="project">Select a project</label>
+                    <select name="project" id="project">
+                        <option value="groceries">Groceries</option>
+                        <option value="movingprep">Moving prep</option>
+                    </select>
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" placeholder="Eggs">
+                    <label for="descr">Description</label>
+                    <input type="text" id="descr" name="descr" placeholder="3 fresh eggs">
+                    <label for="due-date">Due date</label>
+                    <input type="date" id="due-date" name="due-date">
+                    <label for="priority">Level of priority</label>
+                    <input type="number" min="0" max="2" step="1" id="priority" name="priority" value="0">
+                </fieldset>
+                <fieldset>
+                    <legend>New note</legend>
+                    <textarea name="note" id="note" cols="30" rows="10" placeholder="write your notes here"></textarea>
+                </fieldset>
+                <button type="submit">Save</button>
+            </form>
         </div>
     </div>
     <footer>
