@@ -3,7 +3,7 @@
     super dark #130f1a
     old rose #997578
     golden yellow #cea73c
-    light blue green #b3d1ca
+    light blue green #5f998c
 } */
 
 @font-face {
@@ -110,6 +110,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: .3rem;
+    overflow: auto;
 }
 
 .task {
@@ -127,6 +128,64 @@ header {
 
 .task .descr {
     font-style: italic;
+}
+
+.task.priority-zero {
+    border-left: solid 5px #5f998c;
+}
+
+.task.priority-one {
+    border-left: solid 5px #cea73c;
+}
+
+.task.priority-two {
+    border-left: solid 5px #997578;
+}
+
+.project {
+    background-color: #cfcfcf;
+    color: #130f1a;
+    border-radius: .2rem;
+    padding: .5rem;
+    font-weight: 600;
+}
+
+.project li {
+    font-weight: 100;
+    list-style-type: circle;
+}
+
+.notes-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.note-card {
+    background-color: #cfcfcf;
+    color: #130f1a;
+    border-radius: .2rem;
+    padding: .5rem;
+    height: 180px;
+    width: 160px;
+    text-overflow: ellipsis;
+    display: grid;
+    grid-template-columns: 1fr 10px;
+    
+}
+
+.note-card button {
+    height: fit-content;
+    width: fit-content;
+    padding: .2rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #985359;
+}
+
+.note-card button:hover {
+    cursor: pointer;
+    color: #cfcfcf;
 }
 
 .form-container {
