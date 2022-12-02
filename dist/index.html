@@ -54,6 +54,11 @@
             <button class="close-form">exit</button>
             <form>
                 <legend>What would you like to create ?</legend>
+                <fieldset class="select">
+                    <button type="button" class="new-project">New project</button>
+                    <button type="button" class="new-task">New task</button>
+                    <button type="button" class="new-note">New note</button>
+                </fieldset>
                 <fieldset class="new-project">
                     <legend>New project</legend>
                     <label for="title">Title</label>
@@ -77,11 +82,12 @@
                     <label for="priority">Level of priority</label>
                     <input type="number" min="0" max="2" step="1" id="priority" name="priority" value="0">
                 </fieldset>
-                <fieldset>
+                <fieldset class="new-note">
                     <legend>New note</legend>
                     <textarea name="note" id="note" cols="30" rows="10" placeholder="write your notes here"></textarea>
                 </fieldset>
-                <button type="submit">Save</button>
+                <button type="button" class="save">Save</button>
+                <button type="button" class="save-edit">Save changes</button>
             </form>
         </div>
     </div>
