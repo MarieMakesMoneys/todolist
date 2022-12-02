@@ -59,8 +59,16 @@ export function deleteNote() {
                 element.parentNode.removeChild(element)
             })
 
+            allNotes.forEach((note) => {
+                localStorage.removeItem(`notecontent${allNotes.indexOf(note)}`)
+            })
+
             allNotes.splice(arrayIndex, 1)
             displayNotes()
+
+            allNotes.forEach((note) => {
+                localStorage.setItem(`notecontent${allNotes.indexOf(note)}`, note.content)
+            })
         })
     })
 }
@@ -84,6 +92,8 @@ export function editNote() {
                 let noteContent = document.querySelector('fieldset.new-note>textarea').value
                 
                 allNotes[arrayIndex].content = noteContent
+
+                localStorage.setItem(`notecontent${arrayIndex}`, noteContent)
 
                 displayNotes()
                 document.querySelector('.form-container').style.display = "none"
