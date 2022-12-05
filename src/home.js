@@ -120,6 +120,10 @@ function deleteTask() {
             }
 
             allTasks.splice(arrayIndex, 1)
+
+            let storedTasks = JSON.stringify(allTasks)
+            localStorage.setItem('tasks', storedTasks)
+
             displayTasks(allTasks)
         })
     })
@@ -166,6 +170,7 @@ function editTask() {
                 let taskDate = document.querySelector('fieldset.new-task>input#due-date').value
                 taskDate = taskDate.replaceAll("-", "")
                 let taskPriority = document.querySelector('fieldset.new-task>input#priority').value
+                let taskStatus = document.querySelector(`button[data-array-index="${arrayIndex}"]`).classList.value.split(' ')[1]
 
                 let formerProject = allProjects[oldProjectIndex].content
                 let chosenProject = allProjects[indexOfProject].content
@@ -185,6 +190,9 @@ function editTask() {
                     allTasks[arrayIndex].descr = taskDescr
                     allTasks[arrayIndex].dueDate = taskDate
                     allTasks[arrayIndex].priority = taskPriority
+
+                    let storedTasks = JSON.stringify(allTasks)
+                    localStorage.setItem('tasks', storedTasks)
                 } else {
                     let taskTitle = allTasks[oldProjectIndex].title
                     for (let j = 0; j < formerProject.length; j++) {
@@ -197,6 +205,9 @@ function editTask() {
                     let newTask = taskFactory(taskTitle, taskDescr, taskDate, taskProject, taskPriority)
                     allTasks.push(newTask)
                     chosenProject.push(newTask)
+
+                    let storedTasks = JSON.stringify(allTasks)
+                    localStorage.setItem('tasks', storedTasks)
                 }
 
                 displayTasks(allTasks)

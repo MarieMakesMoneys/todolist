@@ -66,9 +66,8 @@ export function deleteNote() {
             allNotes.splice(arrayIndex, 1)
             displayNotes()
 
-            allNotes.forEach((note) => {
-                localStorage.setItem(`notecontent${allNotes.indexOf(note)}`, note.content)
-            })
+            let storedNotes = JSON.stringify(allNotes)
+            localStorage.setItem('notes', storedNotes)
         })
     })
 }
@@ -93,7 +92,8 @@ export function editNote() {
                 
                 allNotes[arrayIndex].content = noteContent
 
-                localStorage.setItem(`notecontent${arrayIndex}`, noteContent)
+                let storedNotes = JSON.stringify(allNotes)
+                localStorage.setItem('notes', storedNotes)
 
                 displayNotes()
                 document.querySelector('.form-container').style.display = "none"

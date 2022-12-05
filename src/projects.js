@@ -71,6 +71,10 @@ export function deleteProject() {
             domElements.forEach((element) => {
                 element.parentNode.removeChild(element)
             })
+
+            let storedProjects = JSON.stringify(allProjects)
+            localStorage.setItem('projects', storedProjects)
+
             displayProjects()
             displaySidebarProjects()
             displayDropdownOptions()
@@ -101,6 +105,9 @@ export function editProject() {
                 allProjects[arrayIndex].title = projectTitle
                 allProjects[arrayIndex].descr = projectDescr
                 allProjects[arrayIndex].content = projectContent
+
+                let storedProjects = JSON.stringify(allProjects)
+                localStorage.setItem('projects', storedProjects)
 
                 displayProjects()
                 displaySidebarProjects()
