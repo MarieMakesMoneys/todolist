@@ -47,6 +47,28 @@ for (let key of keys) {
     }
 }
 
+// ICONS DISPLAY
+import homeicon from './icons8-home-page-96.png';
+const homelogo = document.querySelector('img[alt="H"]')
+homelogo.setAttribute('src', homeicon)
+
+import timelineicon from './icons8-timeline-week-96.png'
+const timelinelogo = document.querySelector('img[alt="T"]')
+timelinelogo.setAttribute('src', timelineicon)
+
+import projecticon from './icons8-checklist-96.png'
+const projectlogo = document.querySelector('img[alt="P"]')
+projectlogo.setAttribute('src', projecticon)
+
+import noteicon from './icons8-create-96.png'
+const notelogo = document.querySelector('img[alt="N"]')
+notelogo.setAttribute('src', noteicon)
+
+import newicon from './icons8-plus-math-96.png'
+const newlogo = document.querySelector('img[alt="+"]')
+newlogo.setAttribute('src', newicon)
+
+
 // SIDEBAR DISPLAY
 const sidebarProjectsList = document.querySelector('.projects-container')
 function displaySidebarProjects() {
