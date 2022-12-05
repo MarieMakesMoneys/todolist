@@ -119,7 +119,34 @@ header {
     border-radius: .2rem;
     padding: .5rem;
     display: flex;
-    gap: 1rem;
+   justify-content: space-between;
+}
+
+.task-content {
+    display: grid;
+    grid-template-columns: 25px 1fr;
+}
+
+button.check {
+    width: 15px;
+    border: none;
+    border-radius: .3rem;
+}
+
+button.check.red {
+    background-color: #985359;
+}
+
+button.check.green {
+    background-color: #5f998c;
+}
+
+button.check.blank {
+    background-color: #cfcfcf;
+}
+
+button.check:hover {
+    cursor: pointer;
 }
 
 .task .title {
@@ -142,17 +169,75 @@ header {
     border-left: solid 5px #997578;
 }
 
+.task-options {
+    display: flex;
+    gap: 1rem;
+}
+
+button.delete {
+    height: fit-content;
+    width: fit-content;
+    padding: .2rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #985359;
+    align-self: center;
+    color: #cfcfcf;
+}
+
+button.delete:hover {
+    cursor: pointer;
+    color: #130f1a;
+    border: solid 2px #130f1a;
+}
+
+button.edit {
+    height: fit-content;
+    width: fit-content;
+    padding: .2rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #5f998c;
+    align-self: center;
+    color: #cfcfcf;
+}
+
+button.edit:hover {
+    cursor: pointer;
+    color: #130f1a;
+    border: solid 2px #130f1a;
+}
+
 .project {
     background-color: #cfcfcf;
     color: #130f1a;
     border-radius: .2rem;
     padding: .5rem;
     font-weight: 600;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 25px;
+}
+
+.project-descr {
+    font-weight: 100;
+    font-style: italic;
+}
+
+.project-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
 }
 
 .project li {
     font-weight: 100;
     list-style-type: circle;
+}
+
+.project li.green {
+    list-style-type: disc;
 }
 
 .notes-container {
@@ -161,7 +246,7 @@ header {
     flex-wrap: wrap;
 }
 
-.note-card {
+.note {
     background-color: #cfcfcf;
     color: #130f1a;
     border-radius: .2rem;
@@ -170,27 +255,20 @@ header {
     width: 160px;
     text-overflow: ellipsis;
     display: grid;
-    grid-template-columns: 1fr 10px;
-    
+    justify-content: space-between;
+    grid-template-columns: 1fr 25px;
 }
 
-.note-card button {
-    height: fit-content;
-    width: fit-content;
-    padding: .2rem;
-    border-radius: 1rem;
-    border: none;
-    background-color: #985359;
-}
-
-.note-card button:hover {
-    cursor: pointer;
-    color: #cfcfcf;
+.note-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
 }
 
 .form-container {
     position: fixed;
-    align-self: center;
+    top: 1rem;
     justify-self: center;
     background-color: #130f1a;
     box-shadow: 2px 2px 10px #cfcfcf;
@@ -233,14 +311,41 @@ fieldset {
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
+    gap: .5rem;
 }
 
-form>button {
+fieldset.new-project {
+    display: none;
+}
+
+fieldset.new-task {
+    display: none;
+}
+
+fieldset.new-note {
+    display: none;
+}
+
+button.save {
+    display: none;
+}
+
+button.save-edit {
+    display: none;
+}
+
+form button {
     border: none;
     border-radius: 1rem;
     width: fit-content;
     padding: .5rem 1rem;
     align-self: center;
+    font-size: 1rem;
+}
+
+fieldset.select>button:hover {
+    cursor: pointer;
+    background-color: #cea73c;
 }
 
 form>button:hover {
