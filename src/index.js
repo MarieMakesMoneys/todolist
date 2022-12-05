@@ -1,7 +1,8 @@
-import { displayTasks, changeCheckColor } from './home.js'
-import { displayTimeline, sortedTasks } from './timeline.js'
-import { displayProjects } from './projects.js'
-import { displayNotes } from './notes.js'
+import { displayTasks, changeCheckColor } from './home.js';
+import { displayTimeline, sortedTasks } from './timeline.js';
+import { displayProjects } from './projects.js';
+import { displayNotes } from './notes.js';
+import './style.css';
 
 // OBJECT FACTORIES
 
@@ -16,22 +17,6 @@ const projectFactory = (title, descr, content) => {
 const noteFactory = (content) => {
     return {content}
 }
-
-// DUMMY CONTENT FOR STYLING PURPOSES
-
-const flour = taskFactory("Flour", "1kg of flour", '20221114', "Groceries", '1', 'red')
-const bread = taskFactory("Bread", "2 loaves of bread", '20231130', "Groceries", '2', 'green')
-const packBathroom = taskFactory("Pack bathroom", "drawers + towels", '20221215', "Moving prep", '0', 'blank')
-const packKitchen = taskFactory("Pack kitchen", "drawers + food", '20221214', "Moving prep", '0', 'green')
-const packBedroom = taskFactory("Pack bedroom", "drawers + bed", '20230123', "Moving prep", '0', 'blank')
-
-let groceries = projectFactory("Groceries", "go buy food", [])
-let movingPrep = projectFactory("Moving prep", "get ready for a new chapter", [])
-
-let note1 = noteFactory("0blbfjkzbfkjbe fzswjfhzshf kzugfbkz hdgfoizhsgo ishoghze ijgbez sif guifg iqsjzh fuiz f zfgiu zfiuzeif ziu fizh fizu g")
-let note2 = noteFactory("1islfe bgiuegieu zgiuh zo ozpdp zifoh oegh  odp sfiiz foie hg")
-let note3 = noteFactory("2blbfjkzbfkjbe fzswjfhzshf kzugfbkz hdgfoizhsgo ishoghze ijgbez sif guifg iqsjzh fuiz f zfgiu zfiuzeif ziu fizh fizu g")
-let note4 = noteFactory("3islfe bgiuegieu zgiuh zo ozpdp zifoh oegh  odp sfiiz foie hg")
 
 // STRUCTURAL ARRAYS & EXPORTS
 const displayContainer = document.querySelector('.container')
