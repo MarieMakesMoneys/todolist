@@ -170,7 +170,6 @@ function editTask() {
                 let taskDate = document.querySelector('fieldset.new-task>input#due-date').value
                 taskDate = taskDate.replaceAll("-", "")
                 let taskPriority = document.querySelector('fieldset.new-task>input#priority').value
-                let taskStatus = document.querySelector(`button[data-array-index="${arrayIndex}"]`).classList.value.split(' ')[1]
 
                 let formerProject = allProjects[oldProjectIndex].content
                 let chosenProject = allProjects[indexOfProject].content
